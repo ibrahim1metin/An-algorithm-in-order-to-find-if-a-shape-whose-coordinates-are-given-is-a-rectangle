@@ -13,7 +13,13 @@ type Point struct {
 type Shape struct {
 	points []Point
 }
-
+func abs(x int) int {
+	if x < 0 {
+		return -x
+	} else {
+		return x
+	}
+}
 func Cosine_of_the_angle_between_two_points(points []Point) (error, float32) {
 	if len(points) != 2 {
 		return errors.New("The points list must consist of two elements"), 1.1
@@ -43,7 +49,7 @@ func pow(x float32, y int) float32 {
 	if y == 0 {
 		return result
 	}
-	for i := 0; i < y; i++ {
+	for i := 0; i < abs(y); i++ {
 		result *= x
 	}
 	if y < 0 {
