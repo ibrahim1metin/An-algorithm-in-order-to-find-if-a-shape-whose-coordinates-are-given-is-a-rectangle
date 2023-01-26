@@ -68,7 +68,7 @@ func squarePrime(x float32) float32 {
 func sqrt(num float32) float32 {
 	result := float32(1.0)
 	for i := 0; i < 100000; i++ {
-		result -= square(result, num) / squarePrime(num)
+		result -= square(result, num) / squarePrime(result)
 	}
 	return result
 }
